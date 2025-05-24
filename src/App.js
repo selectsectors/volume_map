@@ -60,7 +60,6 @@ function App() {
       const date = new Date(bar.t);
       const dateStr = date.toISOString().split('T')[0];
       
-      // Polygon returns timestamps in milliseconds, in Eastern Time
       const hour = date.getHours();
       const minutes = date.getMinutes();
       const totalMinutes = hour * 60 + minutes;
@@ -142,30 +141,30 @@ function App() {
   };
 
   const getColorForValue = (value, isAverage = false) => {
-    if (value === null) return '#000000';
+    if (value === null) return '#000000'; // Black for null values
     
     const val = parseFloat(value);
     
     if (isAverage) {
-      if (val >= 12) return '#FDB750';
-      if (val >= 9) return '#C89F5F';
-      if (val >= 7) return '#9B8B7A';
-      if (val >= 5) return '#6B7DB5';
-      return '#4A5F8F';
+      if (val >= 12) return '#FFD700'; // Bright gold
+      if (val >= 9) return '#FFFF99';  // Soft yellow
+      if (val >= 7) return '#87CEEB';  // Sky blue
+      if (val >= 5) return '#4682B4';  // Steel blue
+      return '#27408B';                // Deep blue
     }
     
-    if (val >= 15) return '#F9D662';
-    if (val >= 12) return '#E8C652';
-    if (val >= 10) return '#C4A968';
-    if (val >= 8) return '#9B8B7A';
-    if (val >= 6) return '#7B8EBF';
-    if (val >= 4) return '#5B6FA5';
-    return '#3B508B';
+    if (val >= 15) return '#FFD700'; // Bright gold
+    if (val >= 12) return '#FFFF66'; // Light yellow
+    if (val >= 10) return '#87CEEB'; // Sky blue
+    if (val >= 8) return '#4682B4';  // Steel blue
+    if (val >= 6) return '#1E90FF';  // Dodger blue
+    if (val >= 4) return '#4169E1';  // Royal blue
+    return '#27408B';                // Deep blue
   };
 
   const cellStyle = (value, isAverage) => ({
     backgroundColor: getColorForValue(value, isAverage),
-    color: value === null ? '#FFFFFF' : parseFloat(value) > 10 ? '#000000' : '#FFFFFF',
+    color: value === null ? '#FFFFFF' : parseFloat(value) >= 7 ? '#000000' : '#FFFFFF',
     padding: '8px',
     border: '1px solid #4a5568',
     textAlign: 'center',
