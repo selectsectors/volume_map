@@ -16,3 +16,20 @@
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  
+  /* Vibrant color classes for volume map */
+  .bright-yellow {
+    background-color: #FFEB3B;
+  }
+  
+  .gold-yellow {
+    background-color: #FFD700;
+  }
+  
+  .vibrant-blue {
+    background-color: #2196F3;
+  }
+  
+  .deep-blue {
+    background-color: #0D47A1;
+  }

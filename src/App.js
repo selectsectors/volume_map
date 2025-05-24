@@ -147,20 +147,20 @@ function App() {
     const val = parseFloat(value);
     
     if (isAverage) {
-      if (val >= 12) return '#FDB750';
-      if (val >= 9) return '#C89F5F';
+      if (val >= 12) return '#FFCC00';
+      if (val >= 9) return '#FFD700';
       if (val >= 7) return '#9B8B7A';
-      if (val >= 5) return '#6B7DB5';
-      return '#4A5F8F';
+      if (val >= 5) return '#2196F3';
+      return '#0D47A1';
     }
     
-    if (val >= 15) return '#F9D662';
-    if (val >= 12) return '#E8C652';
-    if (val >= 10) return '#C4A968';
+    if (val >= 15) return '#FFEB3B';
+    if (val >= 12) return '#FFD700';
+    if (val >= 10) return '#FFC107';
     if (val >= 8) return '#9B8B7A';
-    if (val >= 6) return '#7B8EBF';
-    if (val >= 4) return '#5B6FA5';
-    return '#3B508B';
+    if (val >= 6) return '#4285F4';
+    if (val >= 4) return '#1976D2';
+    return '#0D47A1';
   };
 
   const cellStyle = (value, isAverage) => ({
